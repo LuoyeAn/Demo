@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinDemo.Views.VideoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    xmlns:models="clr-namespace:XamarinDemo.Models"
+    xmlns:vm="clr-namespace:XamarinDemo.ViewModels"
+    Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:VideoViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <mm:VideoView
+                BackgroundColor="Black"
+                HorizontalOptions="Fill"
+                ShowControls="True"
+                VerticalOptions="FillAndExpand"
+                VideoAspect="AspectFit" />
+            <CollectionView HeightRequest="80" ItemsSource="{Binding Videos}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:VideoModel">
+                        <StackLayout Margin="5" VerticalOptions="Fill">
+                            <StackLayout
+                                Padding="10"
+                                BackgroundColor="LightGray"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand">
+                                <Label
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding Name}"
+                                    VerticalTextAlignment="Center" />
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinDemo.Views.ImagesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+    xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+    xmlns:models="clr-namespace:XamarinDemo.Models"
+    xmlns:vm="clr-namespace:XamarinDemo.ViewModels"
+    x:Name="BrowseItemsPage"
+    Title="{Binding Title}"
+    BackgroundColor="Gray">
+    <ContentPage.BindingContext>
+        <vm:ImagesViewModel />
+    </ContentPage.BindingContext>
+    <cards:CarouselView
+        ItemsSource="{Binding Images}"
+        SelectedIndex="{Binding CurrentIndex}"
+        SlideShowDuration="4000">
+        <cards:CarouselView.ItemTemplate>
+            <DataTemplate x:DataType="models:ImageModel">
+                <Image
+                    HorizontalOptions="FillAndExpand"
+                    Source="{Binding ImageUrl}"
+                    VerticalOptions="FillAndExpand" />
+            </DataTemplate>
+        </cards:CarouselView.ItemTemplate>
+        <controls:IndicatorsControl />
+    </cards:CarouselView>
+</ContentPage>
