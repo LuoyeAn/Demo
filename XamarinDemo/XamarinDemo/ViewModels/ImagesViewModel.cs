@@ -18,11 +18,15 @@ namespace XamarinDemo.ViewModels
             Images = new ObservableCollection<ImageModel>();
             Images.Add(new ImageModel
             {
-                ImageUrl = "https://hmediastoragestagingv4.blob.core.chinacloudapi.cn/t-1-resource/19ed251d-cdfb-5ce3-e798-fd611a5526ca.jpg"
+                ImageUrl = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2771978851,2906984932&fm=26&gp=0.jpg"
             });
             Images.Add(new ImageModel
             {
-                ImageUrl = "https://cdn-image.bopoda.cn/t-3-resource/d88ea1db-c5af-fc99-38f8-3bb440b81e12.png"
+                ImageUrl = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1091405991,859863778&fm=26&gp=0.jpg"
+            });
+            Images.Add(new ImageModel
+            {
+                ImageUrl = "https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1089874897,1268118658&fm=26&gp=0.jpg"
             });
         }
 
