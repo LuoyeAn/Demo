@@ -17,7 +17,7 @@
             <mm:VideoView
                 BackgroundColor="Black"
                 HorizontalOptions="Fill"
-                ShowControls="True"
+                ShowControls="False"
                 VerticalOptions="FillAndExpand"
                 VideoAspect="AspectFit" />
             <CollectionView HeightRequest="80" ItemsSource="{Binding Videos}">

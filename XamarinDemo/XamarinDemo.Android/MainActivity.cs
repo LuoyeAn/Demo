@@ -33,5 +33,21 @@ namespace XamarinDemo.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        public override bool OnKeyUp([GeneratedEnum] Keycode keyCode, KeyEvent e)
+        {
+            if (keyCode == Keycode.Back) 
+            {
+                Xamarin.Forms.Application.Current.MainPage.DisplayAlert("退出", "确认退出", "退出", "取消").ContinueWith(t =>
+                {
+                    if (t.Result)
+                    {
+                        this.FinishAffinity(); Xamarin.Forms.Application.Current.Quit();
+                    }
+                });
+                return true;
+            }
+            return base.OnKeyUp(keyCode, e);
+        }
     }
 }
