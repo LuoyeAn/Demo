@@ -10,9 +10,11 @@
         <vm:WebSiteViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <WebView
-            HorizontalOptions="Fill"
-            Source="{Binding Url}"
-            VerticalOptions="Fill" />
+        <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
+            <WebView
+                HorizontalOptions="Fill"
+                Source="{Binding Url}"
+                VerticalOptions="Fill" />
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

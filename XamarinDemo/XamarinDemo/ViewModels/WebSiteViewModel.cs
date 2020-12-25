@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace XamarinDemo.ViewModels
 {
@@ -18,5 +20,11 @@ namespace XamarinDemo.ViewModels
             get => _url;
             set => SetProperty(ref _url, value);
         }
+
+        public ICommand RefreshCommand => new Command(() => {
+            Url = "";
+            Url = "https://www.baidu.com";
+            IsBusy = false;
+        });
     }
 }
