@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 using PanCardView.Droid;
 using MediaManager;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace XamarinDemo.Droid
 {
@@ -26,6 +28,13 @@ namespace XamarinDemo.Droid
             CardsViewRenderer.Preserve();
             CrossMediaManager.Current.Init(this);
             LoadApplication(new App());
+            SendMessage();
+        }
+
+        private async void SendMessage()
+        {
+            await Task.Delay(5000);
+            MessagingCenter.Send(App.Current, "Hi","1");
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

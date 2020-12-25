@@ -15,6 +15,12 @@ namespace XamarinDemo.Views
         public WebSitePage()
         {
             InitializeComponent();
+
+            MessagingCenter.Subscribe<Application,string>(App.Current, "Hi", (t,p) =>
+            {
+                System.Diagnostics.Debug.WriteLine("2fdsf");
+                DisplayAlert("Hi",p,"OK");
+            });
         }
     }
 }
